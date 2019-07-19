@@ -8,12 +8,31 @@ A simple base image with a `maven:3-jdk-11` base and `nvm` ([Node Version Manage
 In your current working directory:
 
 ```sh
-echo "echo hello" > my-build-script.sh && chmod +x my-build-script.sh
+DESIRED_NODE_VERSION=6.9.1
 
-container=hello_world
+cat > my-build-script.sh <<- EOM
+source /root/.bashrc # load nvm aliases
+nvm install ${DESIRED_NODE_VERSION}
+nvm use ${DESIRED_NODE_VERSION}
+# Do other awesome stuff here
+EOM
+
+chmod +x my-build-script.sh
+
+container=build-docker
 
 docker run --name ${container} -d -it -v ${PWD}:/usr/app/ clusterfk/mvn-nvm-build
 docker exec -it ${container} /bin/bash "/usr/app/my-build-script.sh"
+```
+
+**Output**:
+```sh
+Downloading and installing node v6.9.1...
+Downloading https://nodejs.org/dist/v6.9.1/node-v6.9.1-linux-x64.tar.xz...
+######################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v6.9.1 (npm v3.10.8)
 ```
 
 ## Building ##
