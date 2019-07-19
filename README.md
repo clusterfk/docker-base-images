@@ -4,6 +4,8 @@
 
 A maven build parent holding various docker base images.
 
+* [mvn-nvm-build](mvn-nvm-build/README.md) - [![Build Status](https://travis-ci.org/clusterfk/docker-base-images.svg?branch=master)](https://travis-ci.org/clusterfk/docker-base-images)
+
 ## Building ##
 
 * Built with [fabric8io docker-maven-plugin](https://github.com/fabric8io/docker-maven-plugin/).
