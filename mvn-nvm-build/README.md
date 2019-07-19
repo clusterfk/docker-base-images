@@ -5,9 +5,15 @@ A simple base image with a `maven:3-jdk-11` base and `nvm` ([Node Version Manage
 
 ## Example Usage ##
 
+In your current working directory:
+
 ```sh
-docker run --name ${container} -d -it -v ${PWD}:/usr/app/ clusterfk/mvn-nvm-build /bin/bash
-docker exec -it ${container} "/bin/bash my-build-script.sh"
+echo "echo hello" > my-build-script.sh && chmod +x my-build-script.sh
+
+container=hello_world
+
+docker run --name ${container} -d -it -v ${PWD}:/usr/app/ clusterfk/mvn-nvm-build
+docker exec -it ${container} /bin/bash "/usr/app/my-build-script.sh"
 ```
 
 ## Building ##
