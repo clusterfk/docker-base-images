@@ -3,6 +3,10 @@
 
 A simple base image with a `maven:3-jdk-11` base and `nvm` ([Node Version Manager](https://github.com/nvm-sh/nvm)) installed.
 
+```sh
+docker pull clusterfk/mvn-nvm-build
+```
+
 ## Example Usage ##
 
 In your current working directory:
