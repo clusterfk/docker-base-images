@@ -25,7 +25,7 @@ chmod +x my-build-script.sh
 
 container=build-docker
 
-docker run --name ${container} -d -it -v ${PWD}:/usr/app/ clusterfk/mvn-nvm-build
+docker run --name ${container} -d -it -v ${PWD}:/usr/app/ clusterfk/mvn-nvm-build /bin/bash
 docker exec -it ${container} /bin/bash "/usr/app/my-build-script.sh"
 ```
 
