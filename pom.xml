@@ -20,6 +20,7 @@
 
     <modules>
         <module>mvn-nvm-build</module>
+        <module>python-ml-env</module>
     </modules>
 
     <build>
