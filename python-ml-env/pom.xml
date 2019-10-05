@@ -10,12 +10,12 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mvn-nvm-build</artifactId>
+    <artifactId>python-ml-env</artifactId>
     <version>${project.parent.version}</version>
     <packaging>pom</packaging>
 
     <properties>
-        <base>maven:3-jdk-11</base>
+        <base>python:3.7.2-slim</base>
     </properties>
 
     <build>
